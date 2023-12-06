@@ -1,0 +1,26 @@
+version: 1
+plugin:
+  env:
+    - LSCBUILD_PLUGIN_GLOBAL=hoge
+  lifecycle:
+    initialize:
+      cmd: |-
+        pwd
+        ls -la
+        env
+      env:
+        - LSCBUILD_PLUGIN_INITIALIZE=huga
+    run:
+      cmd: |-
+        pwd
+        ls -la
+        env
+      env:
+        - LSCBUILD_PLUGIN_RUN=piyo
+    finalize:
+      cmd: |-
+        pwd
+        ls -la
+        env
+      env:
+        - LSCBUILD_PLUGIN_FINALIZE=moge
